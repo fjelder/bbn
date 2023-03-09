@@ -6,20 +6,22 @@
     <title></title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/tailwind.min.css">
 </head>
 
-<body x-data="{ atTop: false }" x-init="atTop = (window.scrollY <= 0) ? false : true"></body>
+<body x-data="{ atTop: false }" x-init="atTop = (window.scrollY <= 0) ? false : true"
+    class="bg-white dark:bg-primary-700">
+    @@include('./inc/_home.html')
+    <div class="container mx-auto">
+        @@include('./inc/_section1.html')
+    </div>
 
-
-@@include('./inc/_home.html')
-<div class="container mx-auto">
-    @@include('./inc/_section1.html')
-</div>
-
-<script src="js/bundle.min.js" defer></script>
+    <section>hello</section>
+    <section>hello</section>
+    <script src="js/bundle.min.js" defer></script>
 </body>
 
 </html>

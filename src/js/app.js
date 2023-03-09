@@ -4,11 +4,11 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-import { test, test2 } from "./test";
+import { darkMode, checkDarkMode } from "./test";
 
-console.log("test");
+// console.log("test");
 
+darkMode();
 document.addEventListener("DOMContentLoaded", function () {
-  test();
-  test2();
+  checkDarkMode();
 });

@@ -1,8 +1,11 @@
-<section id="home" class="home">
-    <header :class="atTop ? 'sticky ' : ''" @scroll.window="atTop = (window.pageYOffset < 25) ? false : true">
+<section id="home" class="min-h-screen home bg-primary-50 dark:bg-primary-800">
+    <header class="flex items-center justify-between transition-all duration-500"
+        :class="atTop ? 'fixed px-32 dark:bg-primary-900 border-b shadow-md border-primary-800/30 h-20 dark:border-primary-300/10 bg-primary-100 w-full py-2' : 'relative h-32 px-24'"
+        @scroll.window="atTop = (window.pageYOffset < 25) ? false : true">
         <nav class="">
-            <a href="" class="">
-                <svg xmlns=" http://www.w3.org/2000/svg" class="logo" viewBox="0 0 512 512">
+            <a href="/" class="">
+                <svg xmlns=" http://www.w3.org/2000/svg" class="w-auto h-16 rotate-45 fill-secondary-600"
+                    viewBox="0 0 512 512">
                     <title>Logo Best Bruk</title>
                     <path
                         d="M126.12 315.1A47.06 47.06 0 1179.06 268h47.06zM149.84 315.1a47.06 47.06 0 0194.12 0v117.84a47.06 47.06 0 11-94.12 0zM196.9 126.12A47.06 47.06 0 11244 79.06v47.06zM196.9 149.84a47.06 47.06 0 010 94.12H79.06a47.06 47.06 0 010-94.12zM385.88 196.9a47.06 47.06 0 1147.06 47.1h-47.06zM362.16 196.9a47.06 47.06 0 01-94.12 0V79.06a47.06 47.06 0 1194.12 0zM315.1 385.88a47.06 47.06 0 11-47.1 47.06v-47.06zM315.1 362.16a47.06 47.06 0 010-94.12h117.84a47.06 47.06 0 110 94.12z" />
@@ -10,11 +13,46 @@
             </a>
         </nav>
         <div>
-            icon
+            <button id="theme-toggle" type="button"
+                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                        fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+
         </div>
-        <div class="banner-contact bg-zinc-500" x-show="atTop" x-transition:enter="transition ease-out duration-600"
-            x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
-            kontakt banner
+        <div class="absolute left-0 w-full py-2 text-sm shadow-md top-20 bg-primary-200 text-primary-500" x-show="atTop"
+            x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100">
+            <div class="flex items-center justify-between w-full max-w-4xl mx-auto">
+                <h2 class="text-xl font-semibold text-primary-700">Best Bruk</h2>
+                <div class="flex items-center">
+                    <div class="flex items-center mr-12 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 mr-5 text-teal-700">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
+                        </svg>
+                        <span> +48 512 215 658</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 mr-5 text-extra-700">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
+                        </svg>
+
+                        kontakt@firma.pl
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 </section>
