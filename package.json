@@ -1,0 +1,37 @@
+{
+  "name": "bb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fjelder",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "babel-loader": "^9.1.2",
+    "browser-sync": "^2.28.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.58.3",
+    "tailwindcss": "^3.2.7",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "alpinejs": "^3.12.0",
+    "gulp-postcss": "^9.0.1"
+  }
+}
