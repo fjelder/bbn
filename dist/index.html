@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/tailwind.min.css">
 </head>
@@ -16,17 +17,27 @@
     class="bg-white dark:bg-primary-700">
     <section id="home" class="min-h-screen home bg-primary-50 dark:bg-primary-800">
     <header class="flex items-center justify-between transition-all duration-500"
-        :class="atTop ? 'fixed px-32 dark:bg-primary-900 border-b shadow-md border-primary-800/30 h-20 dark:border-primary-300/10 bg-primary-100 w-full py-2' : 'relative h-32 px-24'"
+        :class="atTop ? 'fixed px-32 dark:bg-primary-800 border-b shadow-md border-primary-800/30 h-20 dark:border-primary-300/10 bg-primary-100 w-full py-2' : 'relative h-32 px-24'"
         @scroll.window="atTop = (window.pageYOffset < 25) ? false : true">
-        <nav class="">
-            <a href="/" class="">
-                <svg xmlns=" http://www.w3.org/2000/svg" class="w-auto h-16 rotate-45 fill-secondary-600"
+        <nav class="flex items-center justify-start flex-1">
+            <a href="/" class="flex items-center mr-12">
+                <svg xmlns=" http://www.w3.org/2000/svg" class="w-auto h-16 mr-12 rotate-45 fill-secondary-600"
                     viewBox="0 0 512 512">
                     <title>Logo Best Bruk</title>
                     <path
                         d="M126.12 315.1A47.06 47.06 0 1179.06 268h47.06zM149.84 315.1a47.06 47.06 0 0194.12 0v117.84a47.06 47.06 0 11-94.12 0zM196.9 126.12A47.06 47.06 0 11244 79.06v47.06zM196.9 149.84a47.06 47.06 0 010 94.12H79.06a47.06 47.06 0 010-94.12zM385.88 196.9a47.06 47.06 0 1147.06 47.1h-47.06zM362.16 196.9a47.06 47.06 0 01-94.12 0V79.06a47.06 47.06 0 1194.12 0zM315.1 385.88a47.06 47.06 0 11-47.1 47.06v-47.06zM315.1 362.16a47.06 47.06 0 010-94.12h117.84a47.06 47.06 0 110 94.12z" />
                 </svg>
+                <p class="text-4xl logo text-secondary-800" x-show="atTop" x-transition>Best Bruk</p>
             </a>
+
+            <div class="flex space-x-5 menu2" id="navbar">
+                <a href="#home" class="hidden">Poznajmy się</a>
+                <a href="#poznajmy-sie">Poznajmy się</a>
+                <a href="#klienci-indywidualni">Klienci indywidualni</a>
+                <a href="#deweloperzy">Deweloperzy</a></li>
+                <a href="#firmy-i-przedsiebiorstwa">Firmy i przedsiebiorstwa</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
         </nav>
         <div>
             <button id="theme-toggle" type="button"
@@ -44,11 +55,12 @@
             </button>
 
         </div>
-        <div class="absolute left-0 w-full py-2 text-sm shadow-md top-20 bg-primary-200 text-primary-500" x-show="atTop"
-            x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0 scale-90"
-            x-transition:enter-end="opacity-100 scale-100">
-            <div class="flex items-center justify-between w-full max-w-4xl mx-auto">
-                <h2 class="text-xl font-semibold text-primary-700">Best Bruk</h2>
+        <!-- contact banner -->
+        <div class="absolute left-0 w-full py-2 text-sm shadow-md top-20 bg-primary-200/50 text-primary-500 dark:bg-primary-800/50 dark:text-primary-400"
+            x-show="atTop" x-transition:enter="transition ease-out duration-700"
+            x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100">
+            <div class="flex items-center justify-end w-full max-w-4xl mx-auto">
+
                 <div class="flex items-center">
                     <div class="flex items-center mr-12 ">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
