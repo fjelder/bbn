@@ -69,6 +69,7 @@ const tail = function () {
       )
       // .pipe(csso())
       .pipe(gulp.dest("dist/css"))
+      .pipe(browserSync.stream())
   );
 };
 
@@ -101,6 +102,7 @@ const htmlReload = function (cb) {
 
 const watch = function (cb) {
   gulp.watch("src/scss/**/*.scss", { usePolling: true }, gulp.series(css));
+  gulp.watch("src/css/**/*.css", { usePolling: true }, gulp.series(tail));
   gulp.watch("src/js/**/*.js", gulp.series(js));
   gulp.watch("src/html/**/*.html", gulp.series(html, htmlReload, tail));
   cb();
