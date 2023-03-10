@@ -15,14 +15,11 @@ p.logo {
 }
 .contact-bar {
   /* @apply bg-primary-700; */
-  color: white;
   height: 25px;
-  margin: 0px auto;
+  margin: 0px 270px;
+  float: right;
   padding: 0px;
-  font-size: 20px;
-  text-align: center;
   position: relative;
-  min-width: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +31,7 @@ p.logo {
   top: 0;
   width: 0px;
   height: 0px;
-  border-style: dashed;
+  border-style: solid;
   border-width: 0px 25px 25px 0px;
   border-color: transparent;
   /* @apply border-r-primary-700; */
@@ -52,4 +49,8 @@ p.logo {
   border-color: transparent;
   @apply border-l-primary-700;
   transform: translateX(100%);
+}
+/* navbar */
+.menu2 a {
+  @apply text-sm font-medium text-primary-700 dark:text-primary-400;
 }
