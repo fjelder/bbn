@@ -52,5 +52,5 @@ p.logo {
 }
 /* navbar */
 .menu2 a {
-  @apply text-sm font-medium text-primary-700 dark:text-primary-400;
+  @apply text-sm font-medium text-c5 dark:text-c6;
 }
