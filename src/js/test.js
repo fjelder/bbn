@@ -5,6 +5,7 @@ const test = function () {
 function test2() {
   console.log("test2");
 }
+
 function checkDarkMode() {
   console.log("check mode #" + localStorage.getItem("color-theme"));
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -62,4 +63,12 @@ function darkMode() {
     }
   });
 }
-export { darkMode, checkDarkMode };
+
+function directScroll() {
+  window.onscroll = function (e) {
+    // print "false" if direction is down and "true" if up
+    console.log(this.oldScroll > this.scrollY);
+    this.oldScroll = this.scrollY;
+  };
+}
+export { darkMode, checkDarkMode, directScroll };

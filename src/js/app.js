@@ -4,7 +4,7 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-import { darkMode, checkDarkMode } from "./test";
+import { darkMode, checkDarkMode, directScroll } from "./test";
 
 // console.log("test");
 

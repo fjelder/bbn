@@ -1,19 +1,19 @@
-<section id="home" class="min-h-screen home bg-primary-50 dark:bg-primary-800">
-    <div
-        class="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
-        <svg class="absolute left-0 hidden h-full transform -translate-x-1/2 text-c6 dark:text-primary-900 lg:block"
-            viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
-            <path d="M50 0H100L50 100H0L50 0Z"></path>
-        </svg>
-        <img class="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-            src="images/small/4.jpg" alt="" />
-    </div>
-    <header class="flex items-center justify-between transition-all duration-500"
-        :class="atTop ? 'fixed px-32 dark:bg-primary-800 border-b shadow-md border-c1 h-20 dark:border-primary-300/10 bg-primary-100 w-full z-10' : 'pt-24 relative px-24'"
-        @scroll.window="atTop = (window.pageYOffset < 56) ? false : true">
-        <div class="flex items-center justify-between w-full"
-            :class="atTop ? 'bg-primary-1002 dark:bg-primary-800' : '' ">
-            <nav class="flex items-center justify-start flex-1">
+<section id="home" class="min-h-screen">
+
+    <header class="z-10 hidden w-full xl:block" :class="atTop ? 'fixed' : 'relative' " @scroll.window="() => {
+            if(window.pageYOffset < 5){
+                atTop = false;
+                show2 = false;
+            }
+            else
+            {
+                atTop = true;
+                show2 = true;             
+            }
+        }">
+        <div class="flex items-center justify-between transition-all duration-700"
+            :class="atTop ? 'px-32 dark:bg-primary-800 shadow-md h-20 dark:border-primary-300/10 bg-primary-100 w-full' : 'pt-12 px-24'">
+            <nav class="flex items-center justify-start flex-1 h-full">
                 <a href="/" class="flex items-center mr-12">
                     @@include('logo.html')
                     <p class="text-3xl logo text-c4" :class="atTop ? '' : 'hidden'" x-transition>Best Bruk</p>
@@ -30,7 +30,8 @@
             </nav>
 
             <button id="theme-toggle" type="button"
-                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                class="dark:text-c5 hover:bg-c3/50 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+                :class="atTop ? 'text-c2 hover:bg-transparent hover:text-c5' : 'bg-c3 text-c6' ">
                 <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -42,45 +43,16 @@
                         fill-rule="evenodd" clip-rule="evenodd"></path>
                 </svg>
             </button>
-
+            @@include('_contact_banner.html')
         </div>
         <!-- contact banner -->
 
-        <div class="absolute inset-x-0 w-full mx-auto top-20" x-data="{show2: false}" x-show="show2"
-            x-transition:enter="transition ease-in-out duration-1000"
-            x-transition:enter-start="opacity-0 -translate-y-full" x-transition:enter-end="opacity-100 translate-y-0"
-            @scroll.window="() => {
-                console.log(atTop);
-                if(atTop)
-                setTimeout(() => show2 = true, 1500);
-                if(!atTop)
-                show2 = false;
-            }">
-            <div
-                class="text-sm shadow-md shadow-primary-800 bg-c3 w-96 contact-bar before:border-r-c3 after:border-l-c3 text-primary-200">
-                <div class="flex items-center">
-                    <div class="flex items-center mr-12 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-5 h-5 mr-5 text-c2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
-                        </svg>
-                        <span> +48 512 215 658</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-5 h-5 mr-5 text-c2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
-                        </svg>
-                        kontakt@firma.pl
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </header>
-    <div class="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
-        <div class="mb-16 lg:my-40 lg:pr-5 lg:w-1/2">
+
+
+    <div class="container flex flex-col items-start w-full px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
+        <div class="mb-16 lg:mt-52 lg:pr-5 lg:w-1/2">
             <p
                 class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider uppercase rounded-lg text-c5 bg-c1">
                 Specjaliści w swoim fachu!
@@ -111,9 +83,17 @@
     </div>
 
 
+    <div
+        class="inset-y-0 right-0 w-full max-w-xl px-4 mx-auto -z-10 bg-c-4 md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
+        <svg class="absolute left-0 hidden h-full transform -translate-x-1/2 text-c6 dark:text-primary-900 xl:block"
+            viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
+            <path d="M50 0H100L50 100H0L50 0Z"></path>
+        </svg>
+
+
+
+        <img class="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
+            src="images/A1s.jpg" alt="" />
+    </div>
+
 </section>
-123
-<div x-data="{show: false}" x-show="show" x-init="setTimeout(() => show = true, 3000)"
-    class="px-2 mr-4 text-black bg-green-200">
-    {{ $success }}
-</div>
