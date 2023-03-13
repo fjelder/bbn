@@ -54,3 +54,15 @@ p.logo {
 .menu2 a {
   @apply text-sm font-medium text-c5 dark:text-c6;
 }
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 25px 0px;
+}
+.mobile-menu a {
+  font-size: 0.875rem;
+  padding: 0 0 15px;
+  @apply text-c5 dark:text-c6;
+  font-weight: 500; /* medium */
+}

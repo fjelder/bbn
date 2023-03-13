@@ -19,6 +19,9 @@
 
     @@include('./inc/_home.html')
     <div class="container mx-auto">
+        <div x-data="{ label: 'Hello' }" x-effect="console.log(label)">
+            <button @click="label += ' World!'">Change Message</button>
+        </div>
         @@include('./inc/_section1.html')
     </div>
 
