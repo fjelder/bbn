@@ -1,7 +1,7 @@
-<section id="home" class="min-h-screen">
+<section id="home" class="min-h-screen ">
 
-    <header class="z-10 hidden w-full xl:block" :class="atTop ? 'fixed' : 'relative' " @scroll.window="() => {
-            if(window.pageYOffset < 5){
+    <header class="z-10 hidden w-full lg:block" :class="atTop ? 'fixed' : 'relative' " @scroll.window="() => {
+            if(window.pageYOffset < 56){
                 atTop = false;
                 show2 = false;
             }
@@ -12,15 +12,15 @@
             }
         }">
         <div class="flex items-center justify-between transition-all duration-700"
-            :class="atTop ? 'px-32 dark:bg-primary-800 shadow-md h-20 dark:border-primary-300/10 bg-primary-100 w-full' : 'pt-12 px-24'">
+            :class="atTop ? 'px-12 xl:px-32 dark:bg-primary-800 shadow-md h-20 dark:border-primary-300/10 bg-primary-100 w-full' : 'pt-12 px-6 xl:px-24'">
             <nav class="flex items-center justify-start flex-1 h-full">
-                <a href="/" class="flex items-center mr-12">
+                <a href="/" class="flex items-center xl:mr-12">
                     @@include('logo.html')
-                    <p class="text-3xl logo text-c4" :class="atTop ? '' : 'hidden'" x-transition>Best Bruk</p>
+                    <p class="text-xl xl:text-3xl logo text-c4" :class="atTop ? '' : 'hidden'" x-transition>Best
+                        Bruk</p>
                 </a>
 
-                <div class="flex space-x-5 menu2" id="navbar">
-                    <a href="#home" class="hidden">Poznajmy się</a>
+                <div class="flex ml-4 space-x-5 menu2" id="navbar">
                     <a href="#poznajmy-sie">Poznajmy się</a>
                     <a href="#klienci-indywidualni">Klienci indywidualni</a>
                     <a href="#deweloperzy">Deweloperzy</a></li>
@@ -65,27 +65,23 @@
             </p>
             <p class="mb-6 font-semibold">Sprawdź nas i naszą ofertę.</p>
             <div class="flex items-center">
-                <a href="#kontakt"
-                    class="flex items-center px-8 py-4 mr-6 font-semibold tracking-wide rounded-md bg-secondary-400 border-secondary-600/80 text-zinc-100 hover:bg-secondary-700"><ion-icon
-                        name="call-outline" class="mr-4 text-2xl"></ion-icon>
-                    Kontakt</a>
-                <div class="flex items-center mt-1 space-x-3">
-                    <a href="https://www.facebook.com/" target="_blank" class="text-zinc-500 hover:text-zinc-800">
-                        <svg viewBox="0 0 24 24" fill="currentColor" class="h-6 transition-all duration-500 hover:h-8">
-                            <path
-                                d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z">
-                            </path>
-                        </svg>
-                    </a>
-                </div>
+                <button type="button" onclick="location.href='#kontakt';"
+                    class="inline-flex items-center px-4 py-3 mr-5 text-sm font-semibold rounded-md shadow-sm text-primary-50 bg-c2 hover:bg-c3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-c2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="-ml-0.5 mr-1.5 h-5 w-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
+                    </svg>
+                    Kontakt
+                </button>
             </div>
         </div>
     </div>
 
 
     <div
-        class="inset-y-0 right-0 w-full max-w-xl px-4 mx-auto -z-10 bg-c-4 md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
-        <svg class="absolute left-0 hidden h-full transform -translate-x-1/2 text-c6 dark:text-primary-900 xl:block"
+        class="inset-y-0 right-0 hidden w-full max-w-xl px-4 mx-auto lg:block -z-10 bg-c-4 md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
+        <svg class="absolute left-0 hidden h-full transform -translate-x-1/2 text-primary-50 dark:text-primary-900 lg:block"
             viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
             <path d="M50 0H100L50 100H0L50 0Z"></path>
         </svg>
