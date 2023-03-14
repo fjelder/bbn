@@ -14,9 +14,9 @@
 </head>
 
 <body x-data="{ atTop: false, show2: false }" x-init="atTop = (window.scrollY <= 0) ? false : true"
-    class="bg-white dark:bg-primary-700">
+    class="bg-white dark:bg-primary-700 scroll-smooth">
 
-
+    @@include('./inc/_mobile_menu.html')
     @@include('./inc/_home.html')
     <div class="container mx-auto">
         <div x-data="{ label: 'Hello' }" x-effect="console.log(label)">
@@ -25,15 +25,20 @@
         @@include('./inc/_section1.html')
     </div>
 
-    <div class="flex items-center">
-        <div class="w-16 h-56 bg-c1">C1</div>
-        <div class="w-16 h-56 bg-c2">C2</div>
-        <div class="w-16 h-56 bg-c3">C3</div>
-        <div class="w-16 h-56 bg-c4">C4</div>
-        <div class="w-16 h-56 bg-c5">C5</div>
-        <div class="w-16 h-56 bg-c6">C6</div>
-    </div>
+    @@include('./inc/_footer.html')
+
     <script src="js/bundle.min.js" defer></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

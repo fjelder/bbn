@@ -1,30 +1,41 @@
-<div class="fixed z-20 w-full lg:hidden" x-data="{openMobileMenu: false}">
-  <div class="relative h-16 px-4 border-b border-c4/50 bg-primary-100 dark:bg-primary-800">
+<div class="fixed top-0 z-20 w-full lg:hidden" x-data="{openMobileMenu: false}">
+  <div class="relative h-12 px-4 border-b shadow-sm border-c4/10 bg-primary-100 dark:bg-primary-800">
     <div class="flex items-center justify-between h-full">
       <div class="flex items-center">
         @@include('_logo.html')
-        <p class="text-2xl logo text-c4">Best Bruk</p>
+        <p class="text-xl logo text-c4">Best Bruk</p>
       </div>
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6 cursor-pointer text-primary-500" @click="openMobileMenu = ! openMobileMenu;">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
+      <div class="flex items-center h-full px-4 border-c4/10" x-on:click="openMobileMenu = !openMobileMenu"
+        x-bind:class="openMobileMenu ? 'border-x' : 'border-0'">
+
+        <button class="relative flex items-center justify-center w-5 h-auto text-c4 focus:outline-none">
+
+          <span x-bind:class="openMobileMenu ? 'translate-y-0 rotate-45' : '-translate-y-[6px]'"
+            class="absolute w-full h-0.5 transition transform bg-current"></span>
+
+          <span x-bind:class="openMobileMenu ? 'opacity-0 translate-x-2' : 'opacity-100'"
+            class="absolute w-full h-0.5 transition transform bg-current"></span>
+
+          <span x-bind:class="openMobileMenu ? 'translate-y-0 -rotate-45' : 'translate-y-[6px]'"
+            class="absolute w-full h-0.5 transition transform bg-current"></span>
+
+        </button>
+
       </div>
     </div>
 
-    <div class="absolute right-0 w-full max-w-xs px-5" x-show="openMobileMenu" x-transition
+    <div class="absolute right-0 hidden w-full max-w-xs px-5" x-show="openMobileMenu" x-transition
       x-transition:enter.duration.1000ms>
       <div class="w-full h-px bg-primary-100 dark:bg-primary-800"></div>
     </div>
 
-    <div class="absolute right-0 w-full max-w-xs px-5 -mt-px -z-10" x-show="openMobileMenu"
+    <div class="absolute right-0 w-full max-w-xs px-4 -mt-px -z-10" x-show="openMobileMenu"
       @click.outside="openMobileMenu = false" x-transition:enter="transition ease-out duration-500"
       x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0"
       x-transition:leave="transition ease-in duration-300" x-transition:leave-start="translate-y-0"
       x-transition:leave-end="-translate-y-full ">
-      <div class="w-full border border-t-0 border-c4/50 bg-primary-100 dark:bg-primary-800 -z-10">
-        <div class="mobile-menu">
+      <div class="w-full border border-t-0 border-c4/10 bg-primary-100 dark:bg-primary-800">
+        <div class="mobile-menu" @click="openMobileMenu = false">
           <a href="#poznajmy-sie">Poznajmy się</a>
           <a href="#klienci-indywidualni">Klienci indywidualni</a>
           <a href="#deweloperzy">Deweloperzy</a></li>
@@ -46,7 +57,17 @@
           </button>
         </div>
       </div>
-
+      <div class="flex flex-col items-center hidden w-full mt-8">
+        <span class="mb-2 text-white bg-zinc-500">Panel kolorów</span>
+        <div class="flex flex-col w-full text-center">
+          <div class="h-10 bg-c1">C1</div>
+          <div class="h-10 bg-c2">C2</div>
+          <div class="h-10 bg-c3">C3</div>
+          <div class="h-10 bg-c4">C4</div>
+          <div class="h-10 bg-c5">C5</div>
+          <div class="h-10 bg-c6">C6</div>
+        </div>
+      </div>
     </div>
   </div>
 

@@ -14,10 +14,97 @@
 </head>
 
 <body x-data="{ atTop: false, show2: false }" x-init="atTop = (window.scrollY <= 0) ? false : true"
-    class="bg-white dark:bg-primary-700">
+    class="bg-white dark:bg-primary-700 scroll-smooth">
 
+    <div class="fixed top-0 z-20 w-full lg:hidden" x-data="{openMobileMenu: false}">
+  <div class="relative h-12 px-4 border-b shadow-sm border-c4/10 bg-primary-100 dark:bg-primary-800">
+    <div class="flex items-center justify-between h-full">
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-8 mr-4 lg:h-16 xl:mr-12" xml:space="preserve" width="100mm"
+  height="100mm" version="1.1"
+  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+  viewBox="0 0 10000 10000" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Warstwa_x0020_1">
+    <metadata id="CorelCorpID_0Corel-Layer" />
+    <circle class="fill-c3" cx="5000" cy="5000" r="4606" />
+    <path class="fill-c1"
+      d="M8359 1849l-3421 6496 -4433 -2335c-72,-325 -111,-663 -111,-1010 0,-2544 2062,-4606 4606,-4606 1325,0 2519,559 3359,1455z" />
+    <path class="fill-c5"
+      d="M5000 394c1156,0 2213,426 3022,1130l-3276 6220 -4329 -2279c-15,-153 -23,-308 -23,-465 0,-2544 2062,-4606 4606,-4606z" />
+  </g>
+</svg>
 
-    <section id="home" class="min-h-screen ">
+        <p class="text-xl logo text-c4">Best Bruk</p>
+      </div>
+      <div class="flex items-center h-full px-4 border-c4/10" x-on:click="openMobileMenu = !openMobileMenu"
+        x-bind:class="openMobileMenu ? 'border-x' : 'border-0'">
+
+        <button class="relative flex items-center justify-center w-5 h-auto text-c4 focus:outline-none">
+
+          <span x-bind:class="openMobileMenu ? 'translate-y-0 rotate-45' : '-translate-y-[6px]'"
+            class="absolute w-full h-0.5 transition transform bg-current"></span>
+
+          <span x-bind:class="openMobileMenu ? 'opacity-0 translate-x-2' : 'opacity-100'"
+            class="absolute w-full h-0.5 transition transform bg-current"></span>
+
+          <span x-bind:class="openMobileMenu ? 'translate-y-0 -rotate-45' : 'translate-y-[6px]'"
+            class="absolute w-full h-0.5 transition transform bg-current"></span>
+
+        </button>
+
+      </div>
+    </div>
+
+    <div class="absolute right-0 hidden w-full max-w-xs px-5" x-show="openMobileMenu" x-transition
+      x-transition:enter.duration.1000ms>
+      <div class="w-full h-px bg-primary-100 dark:bg-primary-800"></div>
+    </div>
+
+    <div class="absolute right-0 w-full max-w-xs px-4 -mt-px -z-10" x-show="openMobileMenu"
+      @click.outside="openMobileMenu = false" x-transition:enter="transition ease-out duration-500"
+      x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0"
+      x-transition:leave="transition ease-in duration-300" x-transition:leave-start="translate-y-0"
+      x-transition:leave-end="-translate-y-full ">
+      <div class="w-full border border-t-0 border-c4/10 bg-primary-100 dark:bg-primary-800">
+        <div class="mobile-menu" @click="openMobileMenu = false">
+          <a href="#poznajmy-sie">Poznajmy się</a>
+          <a href="#klienci-indywidualni">Klienci indywidualni</a>
+          <a href="#deweloperzy">Deweloperzy</a></li>
+          <a href="#firmy-i-przedsiebiorstwa">Firmy i przedsiebiorstwa</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+        <div class="text-center border-t dark:border-primary-300/10">
+          <button type="button" class="theme-toggle text-c2 dark:text-c5 p-2.5">
+            <svg class="hidden w-5 h-5 theme-toggle-dark-icon" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg class="hidden w-5 h-5 theme-toggle-light-icon" fill="currentColor" viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-col items-center hidden w-full mt-8">
+        <span class="mb-2 text-white bg-zinc-500">Panel kolorów</span>
+        <div class="flex flex-col w-full text-center">
+          <div class="h-10 bg-c1">C1</div>
+          <div class="h-10 bg-c2">C2</div>
+          <div class="h-10 bg-c3">C3</div>
+          <div class="h-10 bg-c4">C4</div>
+          <div class="h-10 bg-c5">C5</div>
+          <div class="h-10 bg-c6">C6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+    <section id="home" class="lg:min-h-screen ">
 
     <header class="z-10 hidden w-full lg:block" :class="atTop ? 'fixed' : 'relative' " @scroll.window="() => {
             if(window.pageYOffset < 56){
@@ -34,7 +121,7 @@
             :class="atTop ? 'px-12 xl:px-32 dark:bg-primary-800 shadow-md h-20 dark:border-primary-300/10 bg-primary-100 w-full' : 'pt-12 px-6 xl:px-24'">
             <nav class="flex items-center justify-start flex-1 h-full">
                 <a href="/" class="flex items-center xl:mr-12">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-10 mr-4 lg:h-16 xl:mr-12" xml:space="preserve" width="100mm"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-8 mr-4 lg:h-16 xl:mr-12" xml:space="preserve" width="100mm"
   height="100mm" version="1.1"
   style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
   viewBox="0 0 10000 10000" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -108,76 +195,12 @@
 
     </header>
 
-    <div class="fixed z-20 w-full lg:hidden" x-data="{openMobileMenu: false}">
-  <div class="relative h-16 px-4 border-b border-c4/50 bg-primary-100 dark:bg-primary-800">
-    <div class="flex items-center justify-between h-full">
-      <div class="flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-auto h-10 mr-4 lg:h-16 xl:mr-12" xml:space="preserve" width="100mm"
-  height="100mm" version="1.1"
-  style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-  viewBox="0 0 10000 10000" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g id="Warstwa_x0020_1">
-    <metadata id="CorelCorpID_0Corel-Layer" />
-    <circle class="fill-c3" cx="5000" cy="5000" r="4606" />
-    <path class="fill-c1"
-      d="M8359 1849l-3421 6496 -4433 -2335c-72,-325 -111,-663 -111,-1010 0,-2544 2062,-4606 4606,-4606 1325,0 2519,559 3359,1455z" />
-    <path class="fill-c5"
-      d="M5000 394c1156,0 2213,426 3022,1130l-3276 6220 -4329 -2279c-15,-153 -23,-308 -23,-465 0,-2544 2062,-4606 4606,-4606z" />
-  </g>
-</svg>
 
-        <p class="text-2xl logo text-c4">Best Bruk</p>
-      </div>
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6 cursor-pointer text-primary-500" @click="openMobileMenu = ! openMobileMenu;">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </div>
-    </div>
 
-    <div class="absolute right-0 w-full max-w-xs px-5" x-show="openMobileMenu" x-transition
-      x-transition:enter.duration.1000ms>
-      <div class="w-full h-px bg-primary-100 dark:bg-primary-800"></div>
-    </div>
-
-    <div class="absolute right-0 w-full max-w-xs px-5 -mt-px -z-10" x-show="openMobileMenu"
-      @click.outside="openMobileMenu = false" x-transition:enter="transition ease-out duration-500"
-      x-transition:enter-start="-translate-y-full" x-transition:enter-end="translate-y-0"
-      x-transition:leave="transition ease-in duration-300" x-transition:leave-start="translate-y-0"
-      x-transition:leave-end="-translate-y-full ">
-      <div class="w-full border border-t-0 border-c4/50 bg-primary-100 dark:bg-primary-800 -z-10">
-        <div class="mobile-menu">
-          <a href="#poznajmy-sie">Poznajmy się</a>
-          <a href="#klienci-indywidualni">Klienci indywidualni</a>
-          <a href="#deweloperzy">Deweloperzy</a></li>
-          <a href="#firmy-i-przedsiebiorstwa">Firmy i przedsiebiorstwa</a>
-          <a href="#kontakt">Kontakt</a>
+    <div class="container relative flex flex-col items-start w-full px-4 mx-auto xl:px-8 lg:max-w-screen-xl">
+        <div class="lg:hidden bg-[url('/images/A1s.jpg')] h-full w-full left-0 absolute opacity-10">
         </div>
-        <div class="text-center border-t dark:border-primary-300/10">
-          <button type="button" class="theme-toggle text-c2 dark:text-c5 p-2.5">
-            <svg class="hidden w-5 h-5 theme-toggle-dark-icon" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg class="hidden w-5 h-5 theme-toggle-light-icon" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-
-
-    <div class="container flex flex-col items-start w-full px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
-        <div class="mb-16 lg:mt-52 lg:pr-5 lg:w-1/2">
+        <div class="mt-20 mb-16 lg:mt-52 lg:pr-5 lg:w-1/2">
             <p
                 class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider uppercase rounded-lg text-c5 bg-c1">
                 Specjaliści w swoim fachu!
@@ -215,6 +238,8 @@
             src="images/A1s.jpg" alt="" />
     </div>
 
+
+
 </section>
 
     <div class="container mx-auto">
@@ -223,126 +248,115 @@
         </div>
         <section class="section-one">
     <h2>Testowa sekcja numer 1</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique commodi tempore, architecto dolorum,
-        accusantium excepturi adipisci maiores in ad recusandae esse facere perferendis eligendi voluptatem id illo
-        pariatur fugiat dicta temporibus quia natus. Voluptatibus ea magni veniam quas facere pariatur dicta nihil saepe
-        sapiente perferendis. Enim incidunt quo quas quae eum aliquid. Repellat corporis quos consequuntur itaque
-        consequatur beatae ipsum sequi earum eaque excepturi vitae perspiciatis fuga cum iusto optio est, eius modi
-        ratione architecto animi quaerat. Praesentium et tenetur dignissimos quia tempora! Voluptates necessitatibus
-        earum quasi magni libero, quisquam amet impedit aspernatur. Veritatis dolore odio dicta nemo, similique ratione
-        modi neque animi sapiente veniam tempore adipisci blanditiis placeat dignissimos reiciendis quo, vitae
-        explicabo, provident iste dolorem illo numquam enim tempora. Facilis ea tempora enim natus eius voluptate nihil
-        distinctio ratione ducimus nostrum temporibus, iure neque at in quo? Nam ut modi, distinctio cum dolor dicta
-        officiis non! Deserunt, at aperiam! In, optio unde aliquid nisi illo eveniet repellendus non expedita tenetur
-        laborum dicta magnam temporibus laboriosam reiciendis deserunt, consectetur ipsa, corrupti vitae voluptates hic
-        autem! Laboriosam doloribus quia ad odit veritatis, nesciunt quasi neque praesentium! Ipsum quasi facilis
-        mollitia, aperiam deleniti distinctio qui excepturi ab hic suscipit in quis exercitationem sit ipsam molestias
-        debitis nobis sint! Sint earum quibusdam excepturi nulla soluta! Voluptatem, perspiciatis! Mollitia praesentium
-        similique vitae natus culpa eaque quaerat aut impedit? Consequuntur, alias! Aspernatur est ab atque, illo ut,
-        vitae eius voluptatum quisquam laboriosam cumque possimus aliquid cum! Quia quaerat, incidunt, dignissimos rem
-        corrupti illo saepe sint laudantium soluta harum distinctio molestiae aut amet. Voluptas fuga facilis esse
-        officiis? Voluptatibus quod mollitia dolorum ab eos ipsam quia labore sint dolores, suscipit, unde quo aliquid
-        expedita molestias maiores autem, aliquam eligendi exercitationem delectus atque optio? Odit provident voluptate
-        beatae aspernatur veritatis voluptatibus accusantium eius, obcaecati eum suscipit optio! Minus exercitationem
-        fuga culpa tempore cupiditate, dicta maxime optio consectetur deleniti autem iusto tempora? Dolor maxime modi
-        porro quas voluptatibus qui ipsum. Voluptas nisi repellat quos atque? Voluptas facere nulla odio! Eligendi
-        laborum, placeat sed expedita aliquid minus laudantium dolorem dicta fuga facere necessitatibus quod nemo
-        voluptas repudiandae natus culpa dignissimos repellendus aut maxime cupiditate. Ex sequi illum numquam tenetur,
-        impedit reiciendis suscipit temporibus recusandae hic repellendus dolores nisi libero magnam ab debitis optio
-        tempora corporis odit nihil dolor veritatis eos expedita culpa cumque. Consequuntur magni fugit rerum cupiditate
-        rem quia laborum officia alias culpa in, ab deserunt ea itaque aliquid possimus pariatur, sunt magnam ratione
-        minus earum dolorum. Distinctio laborum atque non officiis veritatis expedita possimus voluptatem. Eaque
-        deleniti at atque ab sequi tempora reiciendis suscipit, delectus quam pariatur, illum quidem laborum! Qui,
-        cumque quae dolore at magni commodi delectus nam amet voluptatum error esse velit quas earum recusandae nemo
-        totam facilis eveniet, beatae quibusdam placeat repellat maxime! Quis deleniti quod doloremque? Eveniet dolorem
-        perferendis expedita veritatis, quisquam dicta eaque! Sequi provident pariatur id perferendis similique
-        assumenda accusamus? Quod perspiciatis modi quo beatae id! Omnis odio id amet quaerat similique accusamus!
-        Nihil, blanditiis possimus quia accusantium incidunt odit doloremque, sit, perferendis a placeat molestias quam!
-        Mollitia facere aspernatur aliquid ipsum cupiditate fugit alias?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt neque obcaecati mollitia iure magnam. Dolore
-        incidunt inventore temporibus modi soluta, ea officiis debitis accusamus facilis esse voluptatibus blanditiis
-        earum, nulla qui consectetur quibusdam quia amet explicabo at culpa nihil. Doloremque eaque maiores porro sed
-        natus delectus ab illo facere dolore alias excepturi ipsam fugiat nam sit tempora praesentium repellendus
-        repellat illum, ullam nesciunt corrupti non ex! Nam eius vero ad assumenda cumque suscipit ratione iste illum
-        similique praesentium eos id, consequuntur doloribus quae optio nobis tempora quia laboriosam illo ipsum,
-        corporis sequi, aperiam nesciunt aliquid. Nam ad omnis quae dolores iure, enim vitae consequatur consectetur!
-        Consequatur laboriosam quae molestias dolores rem veritatis, quasi similique dolor porro accusamus? Autem nemo
-        consectetur, atque id labore quisquam animi ad ab maiores sed recusandae expedita et quas repellat incidunt,
-        ipsum qui, adipisci quaerat perspiciatis tempore odit dicta. Non dicta repellendus, ratione esse possimus nam
-        minus modi explicabo deleniti, aut fugit quidem error reiciendis dolorem est ipsam doloremque aliquam quaerat
-        repudiandae maxime qui eveniet rem! Nesciunt porro nobis hic culpa, debitis corporis natus odit reprehenderit
-        laboriosam velit quae vel aperiam ipsam animi laborum ratione aut quam delectus voluptatem at inventore id.
-        Neque dolores soluta laudantium, amet pariatur ab repudiandae rem quasi eligendi! Voluptate corrupti suscipit
-        nulla ad officia possimus ipsum, eligendi, quia, minus dignissimos saepe facere soluta! Eveniet consequuntur
-        sint, incidunt delectus nihil doloribus! Illo error libero consequuntur atque sint obcaecati dolor quo debitis
-        necessitatibus accusamus nam quisquam aspernatur modi hic perferendis, dicta nihil quibusdam! Aliquid incidunt
-        dolor, voluptate ipsa suscipit ducimus, qui rem debitis nobis saepe id nemo quia quidem quaerat, repellat
-        consectetur harum doloribus nisi deleniti veritatis! Neque commodi repellendus voluptas facere eveniet et
-        dignissimos. Nobis, facere odio reiciendis sint omnis iusto distinctio ea tempora velit ullam qui minus magni
-        quod dolore maxime ipsum accusamus totam corrupti incidunt. Repellat ipsam, sint amet itaque doloremque,
-        asperiores illum, delectus a beatae culpa consequuntur nulla similique provident perspiciatis commodi. Commodi
-        aspernatur dolores nam odit rem sint ratione repellat fugit magni assumenda nemo optio incidunt totam voluptatum
-        unde architecto excepturi ut illo dignissimos voluptatem, quod ea earum blanditiis non. Provident, dignissimos
-        reprehenderit maiores, eius quis officia nemo beatae exercitationem quia ullam nostrum laudantium repellat
-        veritatis ex. Saepe earum quisquam iusto placeat ea, sunt modi quod ullam accusamus! Tempore quisquam aspernatur
-        quam minima minus! Unde, optio. Nulla nesciunt quibusdam, enim unde ducimus vero quaerat adipisci est aspernatur
-        magni ipsa doloremque consequatur in dolorem repudiandae laborum, sapiente voluptatibus obcaecati repellat
-        blanditiis? Esse, tenetur ex? Aut, temporibus. Earum, nam nesciunt? Exercitationem adipisci repudiandae sequi
-        assumenda maiores. Nobis labore consectetur dicta nemo expedita vel est facilis voluptate vitae voluptatum,
-        pariatur et dolorum aspernatur perspiciatis natus inventore laudantium nihil illum? Nesciunt suscipit dicta
-        laudantium perferendis sit ipsa recusandae commodi, velit maiores? Ad explicabo ab maiores at sint. Non rem
-        facere similique magnam sunt, quod ex aut corporis molestiae optio sint ratione distinctio exercitationem
-        nostrum ipsa! Sapiente, perferendis. Necessitatibus distinctio magnam in delectus mollitia unde alias et tenetur
-        modi expedita reiciendis dolor minus, quidem eaque, sed facilis vero consectetur fugit officia temporibus
-        perspiciatis. Ad voluptatum sapiente cum consequatur accusamus id incidunt deserunt alias tempora magni soluta
-        repellat saepe recusandae minima eius quia veniam explicabo, quo natus, autem culpa fuga porro necessitatibus
-        earum! Corporis reiciendis deserunt odit ipsum nobis amet consequuntur officiis optio explicabo. Corrupti
-        dolorem, tempore recusandae quasi autem deleniti quaerat expedita! Dolores inventore iure libero nihil ex!
-        Corrupti, velit! Praesentium voluptatibus dicta consequuntur voluptatum. Eveniet impedit tempora minima,
-        cupiditate possimus placeat accusantium deserunt ex quis earum expedita vel non blanditiis, tempore ratione
-        dolor nisi dolorem est molestiae? Error quasi, repudiandae explicabo pariatur, ratione laudantium in
-        consequatur, nisi atque veritatis culpa est ut blanditiis eum! Fugit magnam esse consectetur ea fuga eligendi
-        amet dolorum hic aliquid perspiciatis laudantium ad veritatis, at sunt ipsa? Unde ea recusandae perferendis
-        quis, vitae rerum maiores facere commodi dicta, dolor architecto? Adipisci, temporibus. Et fuga eaque in porro
-        illum neque dolor? Numquam fugiat quia vel ullam commodi, non, molestias architecto nesciunt illo repellat eum
-        dolorum quibusdam. A impedit voluptatem esse facere earum vitae sunt, quaerat nesciunt optio sapiente corrupti
-        error nulla inventore laudantium dolorum consectetur nam deserunt ipsa minima reiciendis harum. Iste sunt
-        voluptatem possimus amet inventore porro doloribus explicabo quod. Enim rem a voluptas itaque! Ipsa asperiores
-        eligendi labore? Exercitationem eius pariatur soluta cumque distinctio ipsa placeat dolor vero incidunt
-        architecto officia, quos nesciunt consectetur adipisci cum, ducimus praesentium dolores amet magni minus nam
-        beatae repudiandae nemo qui. At dolor eveniet, asperiores ipsa quaerat cum voluptates quis voluptate illum iste
-        ad inventore in maiores laudantium reiciendis facere magnam hic est qui harum sed aliquid. Exercitationem,
-        quidem. Dolorum deserunt nobis, sint harum qui quasi possimus ad officia facere ducimus aliquid error itaque
-        natus reprehenderit? Aspernatur ratione quibusdam eum officia blanditiis. Exercitationem, eveniet nesciunt
-        necessitatibus similique culpa quas corporis pariatur. Iusto, illo. Aliquid aspernatur accusamus animi,
-        cupiditate necessitatibus ipsa eos laudantium commodi quas, itaque quae beatae? Enim eveniet vitae, in pariatur
-        dolorum voluptates deleniti quasi quia ratione quae vel distinctio blanditiis commodi atque laboriosam dolor.
-        Nam, necessitatibus? Autem reprehenderit cum itaque praesentium ad delectus placeat, tempora ab id! Molestiae,
-        temporibus excepturi. Accusamus veniam architecto aliquid quis itaque, assumenda dolor dolore cupiditate id
-        soluta voluptatum rerum aliquam delectus harum perferendis ratione consequuntur deserunt tempora numquam odio
-        repudiandae porro explicabo similique. Quae omnis in aperiam enim ex eaque adipisci, neque reiciendis itaque
-        doloremque vero? Rerum corporis amet blanditiis accusantium porro, assumenda tenetur modi hic suscipit aut,
-        eveniet voluptatum natus distinctio temporibus. Deserunt, nihil placeat doloribus enim provident, sapiente est,
-        inventore eligendi vel cum voluptatum quasi aliquid! Id, vitae eaque! Qui laudantium harum voluptate
-        exercitationem iusto eum, doloribus facilis, esse consectetur nam magni fugit. Aliquid, adipisci. Iste veniam
-        error exercitationem minima at officia dolorum obcaecati fugit doloremque eveniet molestiae quibusdam
-        consequuntur, expedita hic consequatur placeat molestias, nisi ut dolores in ea, ipsam incidunt modi eligendi.
-        Rerum consequuntur vitae cupiditate, quae suscipit quam atque perspiciatis id repellat error tempora, autem
-        perferendis accusantium ducimus dignissimos odio, illum quo voluptatibus veritatis molestiae earum deleniti
-        saepe!</p>
+
 </section>
 
     </div>
 
-    <div class="flex items-center">
-        <div class="w-16 h-56 bg-c1">C1</div>
-        <div class="w-16 h-56 bg-c2">C2</div>
-        <div class="w-16 h-56 bg-c3">C3</div>
-        <div class="w-16 h-56 bg-c4">C4</div>
-        <div class="w-16 h-56 bg-c5">C5</div>
-        <div class="w-16 h-56 bg-c6">C6</div>
+    <section id="kontakt" class="mt-24 text-white scroll-mt-24 bg-c5 ">
+  <div data-aos="zoom-in-up" data-aos-duration="1000"
+    class="w-full pt-12 mx-auto border dark:border-c4/50 lg:pt-24 lg:max-w-7xl">
+
+    <h2 class="text-2xl font-semibold text-center text-primary-200 md:text-4xl">
+      Skontaktuj się z <span class="text-c3">nami!</span>
+    </h2>
+
+    <div class="flex flex-col lg:flex-row xl:px-0 lg:mt-24">
+
+      <div class="flex flex-col justify-between w-full px-8 py-10 xl:mr-24 xl:items-end lg:w-1/2">
+
+        <div class="flex items-center mb-8 xl:w-1/2">
+          <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-10 h-10 mr-5 text-c2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+          </svg>
+          <div>
+            <p class="text-sm text-gray-300 dark:text-gray-300">
+              ul. Słowackiego 19,
+            </p>
+            <p class="text-sm text-gray-300 dark:text-gray-300">
+              63-810 Borek Wielkopolski
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center mb-8 xl:w-1/2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-10 h-10 mr-5 text-c3">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
+          </svg>
+          <div>
+            <p class="text-sm text-gray-300 dark:text-gray-300">
+              +48 535 809 222,
+            </p>
+            <p class="text-sm text-gray-300 dark:text-gray-300">
+              best-bruk@best-bruk.com
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center mb-8 xl:w-1/2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-10 h-10 mr-5 text-c4">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+          </svg>
+          <div class="">
+            <p class="text-sm text-gray-300 dark:text-gray-300">
+              NIP: 696 175 70 90
+            </p>
+            <p class="text-sm text-gray-300 dark:text-gray-300">
+              Regon: 301433720
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center mb-8 xl:w-1/2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-10 h-10 mr-5 text-c1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+          </svg>
+
+          <div class="flex-1">
+            <p class="text-sm text-gray-300 dark:text-gray-300">
+              Działamy na terenie województwa <strong>wielkopolskiego.</strong>
+            </p>
+            <p class="text-xs text-gray-300 dark:text-gray-300">
+              W szczególności pobliżu takich miast jak: Poznań, Kórnik, Śrem, Środa Wlkp., Dolsk, Borek Wlkp., Gostyń,
+              Koźmin Wlkp., Krotoszyn
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-1/2 h-96">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155797.2609020185!2d16.761584106477038!3d52.40065525272775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470444d2ece10ab7%3A0xa4ea31980334bfd1!2zUG96bmHFhA!5e0!3m2!1spl!2spl!4v1678128516564!5m2!1spl!2spl"
+          class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
+
+  </div>
+</section>
+
+
     <script src="js/bundle.min.js" defer></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
