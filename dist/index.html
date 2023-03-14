@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/tailwind.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> -->
 </head>
 
 <body x-data="{ atTop: false, show2: false }" x-init="atTop = (window.scrollY <= 0) ? false : true"
@@ -253,9 +254,43 @@
 
     </div>
 
+    <!-- Swiper -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img class="object-cover w-full h-48"
+        src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        alt=""></div>
+    <div class="swiper-slide"><img class="object-cover w-full h-48"
+        src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        alt=""></div>
+    <div class="swiper-slide"><img class="object-cover w-full h-48"
+        src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        alt=""></div>
+    <div class="swiper-slide"><img class="object-cover w-full h-48"
+        src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        alt=""></div>
+    <div class="swiper-slide"><img class="object-cover w-full h-48"
+        src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        alt=""></div>
+    <div class="swiper-slide"><img class="object-cover w-full h-48"
+        src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        alt=""></div>
+    <div class="swiper-slide"><img class="object-cover w-full h-48"
+        src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        alt=""></div>
+    <div class="swiper-slide"><img class="object-cover w-full h-48"
+        src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        alt=""></div>
+    <div class="swiper-slide"><img class="object-cover w-full h-48"
+        src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+        alt=""></div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
     <section id="kontakt" class="mt-24 text-white scroll-mt-24 bg-c5 ">
   <div data-aos="zoom-in-up" data-aos-duration="1000"
-    class="w-full pt-12 mx-auto border dark:border-c4/50 lg:pt-24 lg:max-w-7xl">
+    class="w-full pt-12 mx-auto dark:border-t dark:border-c4/50 lg:pt-24 lg:max-w-7xl">
 
     <h2 class="text-2xl font-semibold text-center text-primary-200 md:text-4xl">
       Skontaktuj się z <span class="text-c3">nami!</span>
@@ -345,8 +380,9 @@
 </section>
 
 
-    <script src="js/bundle.min.js" defer></script>
-    <script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+    <script src="js/bundle.min.js"></script>
+    <script defer>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -356,6 +392,20 @@
                 });
             });
         });
+
+        var swiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false
+            },
+            slidesPerView: "auto",
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
     </script>
 </body>
 

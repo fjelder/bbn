@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/tailwind.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> -->
 </head>
 
 <body x-data="{ atTop: false, show2: false }" x-init="atTop = (window.scrollY <= 0) ? false : true"
@@ -25,10 +26,12 @@
         @@include('./inc/_section1.html')
     </div>
 
+    @@include('./inc/_slider.html')
     @@include('./inc/_footer.html')
 
-    <script src="js/bundle.min.js" defer></script>
-    <script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+    <script src="js/bundle.min.js"></script>
+    <script defer>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -38,6 +41,20 @@
                 });
             });
         });
+
+        var swiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false
+            },
+            slidesPerView: "auto",
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
     </script>
 </body>
 
