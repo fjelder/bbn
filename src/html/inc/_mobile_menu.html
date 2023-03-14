@@ -3,10 +3,10 @@
     <div class="flex items-center justify-between h-full">
       <div class="flex items-center">
         @@include('_logo.html')
-        <p class="text-xl logo text-c4">Best Bruk</p>
+        <p class="text-xl logos">Best-Bruk</p>
       </div>
-      <div class="flex items-center h-full px-4 border-c4/10" x-on:click="openMobileMenu = !openMobileMenu"
-        x-bind:class="openMobileMenu ? 'border-x' : 'border-0'">
+      <div class="flex items-center h-full px-4 cursor-pointer border-c4/10"
+        x-on:click="openMobileMenu = !openMobileMenu" x-bind:class="openMobileMenu ? 'border-x' : 'border-0'">
 
         <button class="relative flex items-center justify-center w-5 h-auto text-c4 focus:outline-none">
 

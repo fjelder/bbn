@@ -373,4 +373,15 @@ textarea {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
+
+.logos {
+  font-family: "Inter var", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #5f5d4f;
+}
+
+.dark .logos {
+  color: #dbe9f9;
+}
 /*# sourceMappingURL=style.min.css.map */

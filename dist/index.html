@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/tailwind.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> -->
@@ -35,10 +34,10 @@
   </g>
 </svg>
 
-        <p class="text-xl logo text-c4">Best Bruk</p>
+        <p class="text-xl logos">Best-Bruk</p>
       </div>
-      <div class="flex items-center h-full px-4 border-c4/10" x-on:click="openMobileMenu = !openMobileMenu"
-        x-bind:class="openMobileMenu ? 'border-x' : 'border-0'">
+      <div class="flex items-center h-full px-4 cursor-pointer border-c4/10"
+        x-on:click="openMobileMenu = !openMobileMenu" x-bind:class="openMobileMenu ? 'border-x' : 'border-0'">
 
         <button class="relative flex items-center justify-center w-5 h-auto text-c4 focus:outline-none">
 
@@ -136,8 +135,8 @@
   </g>
 </svg>
 
-                    <p class="text-xl xl:text-3xl logo text-c4" :class="atTop ? '' : 'hidden'" x-transition>Best
-                        Bruk</p>
+                    <p class="text-xl xl:text-2xl logos" :class="atTop ? '' : 'hidden'" x-transition>Best-Bruk
+                    </p>
                 </a>
 
                 <div class="flex ml-4 space-x-5 menu2" id="navbar">
@@ -198,24 +197,26 @@
 
 
 
-    <div class="container relative flex flex-col items-start w-full px-4 mx-auto xl:px-8 lg:max-w-screen-xl">
-        <div class="lg:hidden bg-[url('/images/A1s.jpg')] h-full w-full left-0 absolute opacity-10">
+    <div class="container relative z-10 flex flex-col items-start w-full px-4 mx-auto xl:px-8 lg:max-w-screen-xl">
+        <div class="lg:hidden bg-[url('/images/A1s.jpg')] h-full w-full left-0 absolute opacity-10 -z-10">
         </div>
         <div class="mt-20 mb-16 lg:mt-52 lg:pr-5 lg:w-1/2">
             <p
                 class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider uppercase rounded-lg text-c5 bg-c1">
                 Specjaliści w swoim fachu!
             </p>
-            <p class="text-6xl font-semibold text-c4 logo">Best Bruk</hp>
-            <p class="pr-5 mb-5 text-base text-justify text-gray-700 md:text-md">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-                explicabo, excepturi, dolor optio autem maxime maiores id ipsa ex
-                nihil rem sit consectetur! Perspiciatis, mollitia
+            <p class="text-6xl logos">Best-Bruk</hp>
+            <p class="pr-5 mb-5 text-base text-justify text-gray-700 md:text-md dark:text-primary-200">
+                Firmę założyłem w 2010 r. Pasją do brukarstwa zaraził mnie mój tata.
+                Przejętą od niego ideę wykonywania usług rzetelnie a prac
+                brukarskich zawsze na solidnej podbudowie realizuję za pomocą
+                nowoczesnego sprzętu...
+                <a href="#poznajmy-sie" class="font-semibold text-c4">[więcej]</a>
             </p>
-            <p class="mb-6 font-semibold">Sprawdź nas i naszą ofertę.</p>
+            <p class="mb-6 font-semibold text-primary-300">Sprawdź nas i naszą ofertę.</p>
             <div class="flex items-center">
                 <button type="button" onclick="location.href='#kontakt';"
-                    class="inline-flex items-center px-4 py-3 mr-5 text-sm font-semibold rounded-md shadow-sm text-primary-50 bg-c2 hover:bg-c3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-c2">
+                    class="inline-flex items-center px-4 py-3 mr-5 text-sm font-semibold rounded-md shadow-sm text-primary-50 bg-c4 hover:bg-c3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-c2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="-ml-0.5 mr-1.5 h-5 w-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -288,7 +289,7 @@
   <div class="swiper-pagination"></div>
 </div>
 
-    <section id="kontakt" class="mt-24 text-white scroll-mt-24 bg-c5 ">
+    <section id="kontakt" class="mt-24 mb-6 text-white scroll-mt-24 bg-c5">
   <div data-aos="zoom-in-up" data-aos-duration="1000"
     class="w-full pt-12 mx-auto dark:border-t dark:border-c4/50 lg:pt-24 lg:max-w-7xl">
 
@@ -378,6 +379,22 @@
 
   </div>
 </section>
+
+    <div
+  class="fixed bottom-0 flex items-center justify-center w-full h-6 space-x-4 bg-primary-100 text-primary-700 lg:hidden">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+    class="w-5 h-5">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
+  </svg>
+  <span class="text-xs">+48 535 809 222</span>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+    class="w-5 h-5">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
+  </svg>
+  <span class="text-xs">best-bruk@best-bruk.com</span>
+</div>
 
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->

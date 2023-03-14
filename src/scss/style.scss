@@ -5,4 +5,14 @@
 //reset, normalize, helper-class
 @import "partials/normalize";
 
-@import "swiper/swiper.scss";
+// @import "swiper/swiper.scss";
+
+.logos {
+  font-family: "Inter var", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $c5-color;
+}
+.dark .logos {
+  color: $c6-color;
+}

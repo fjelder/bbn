@@ -16,8 +16,8 @@
             <nav class="flex items-center justify-start flex-1 h-full">
                 <a href="/" class="flex items-center xl:mr-12">
                     @@include('_logo.html')
-                    <p class="text-xl xl:text-3xl logo text-c4" :class="atTop ? '' : 'hidden'" x-transition>Best
-                        Bruk</p>
+                    <p class="text-xl xl:text-2xl logos" :class="atTop ? '' : 'hidden'" x-transition>Best-Bruk
+                    </p>
                 </a>
 
                 <div class="flex ml-4 space-x-5 menu2" id="navbar">
@@ -52,24 +52,26 @@
 
 
 
-    <div class="container relative flex flex-col items-start w-full px-4 mx-auto xl:px-8 lg:max-w-screen-xl">
-        <div class="lg:hidden bg-[url('/images/A1s.jpg')] h-full w-full left-0 absolute opacity-10">
+    <div class="container relative z-10 flex flex-col items-start w-full px-4 mx-auto xl:px-8 lg:max-w-screen-xl">
+        <div class="lg:hidden bg-[url('/images/A1s.jpg')] h-full w-full left-0 absolute opacity-10 -z-10">
         </div>
         <div class="mt-20 mb-16 lg:mt-52 lg:pr-5 lg:w-1/2">
             <p
                 class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider uppercase rounded-lg text-c5 bg-c1">
                 Specjaliści w swoim fachu!
             </p>
-            <p class="text-6xl font-semibold text-c4 logo">Best Bruk</hp>
-            <p class="pr-5 mb-5 text-base text-justify text-gray-700 md:text-md">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-                explicabo, excepturi, dolor optio autem maxime maiores id ipsa ex
-                nihil rem sit consectetur! Perspiciatis, mollitia
+            <p class="text-6xl logos">Best-Bruk</hp>
+            <p class="pr-5 mb-5 text-base text-justify text-gray-700 md:text-md dark:text-primary-200">
+                Firmę założyłem w 2010 r. Pasją do brukarstwa zaraził mnie mój tata.
+                Przejętą od niego ideę wykonywania usług rzetelnie a prac
+                brukarskich zawsze na solidnej podbudowie realizuję za pomocą
+                nowoczesnego sprzętu...
+                <a href="#poznajmy-sie" class="font-semibold text-c4">[więcej]</a>
             </p>
-            <p class="mb-6 font-semibold">Sprawdź nas i naszą ofertę.</p>
+            <p class="mb-6 font-semibold text-primary-300">Sprawdź nas i naszą ofertę.</p>
             <div class="flex items-center">
                 <button type="button" onclick="location.href='#kontakt';"
-                    class="inline-flex items-center px-4 py-3 mr-5 text-sm font-semibold rounded-md shadow-sm text-primary-50 bg-c2 hover:bg-c3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-c2">
+                    class="inline-flex items-center px-4 py-3 mr-5 text-sm font-semibold rounded-md shadow-sm text-primary-50 bg-c4 hover:bg-c3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-c2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="-ml-0.5 mr-1.5 h-5 w-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
