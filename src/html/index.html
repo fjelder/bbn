@@ -16,17 +16,13 @@
 <body x-data="{ atTop: false, show2: false }" x-init="atTop = (window.scrollY <= 0) ? false : true"
     class="bg-white dark:bg-primary-700 scroll-smooth">
 
-    @@include('./inc/_mobile_menu.html')
-    @@include('./inc/_home.html')
-    <div class="container mx-auto">
-        <div x-data="{ label: 'Hello' }" x-effect="console.log(label)">
-            <button @click="label += ' World!'">Change Message</button>
-        </div>
-        @@include('./inc/_section1.html')
-    </div>
 
-    @@include('./inc/_slider.html')
-    @@include('./inc/_footer.html')
+    <!-- @@include('./inc/_mobile_menu.html') -->
+    <!-- @@include('./inc/_home.html') -->
+    @@include('./inc/home2.html')
+
+
+    @@include('./inc/_contact.html')
     @@include('./inc/_contact_banner_small.html')
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->

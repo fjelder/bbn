@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: colors.slate,
+        primary: colors.neutral,
         secondary: colors.teal,
         extra: colors.fuchsia,
         c1: "#E1E3B1",
@@ -18,5 +18,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("tailgrids/plugin"),
+  ],
 };

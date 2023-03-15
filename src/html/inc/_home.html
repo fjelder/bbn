@@ -1,6 +1,6 @@
 <section id="home" class="lg:min-h-screen ">
 
-    <header class="z-10 hidden w-full lg:block" :class="atTop ? 'fixed' : 'relative' " @scroll.window="() => {
+    <header class="z-20 hidden w-full lg:block" :class="atTop ? 'fixed' : 'relative' " @scroll.window="() => {
             if(window.pageYOffset < 56){
                 atTop = false;
                 show2 = false;
@@ -68,7 +68,7 @@
                 nowoczesnego sprzętu...
                 <a href="#poznajmy-sie" class="font-semibold text-c4">[więcej]</a>
             </p>
-            <p class="mb-6 font-semibold text-primary-300">Sprawdź nas i naszą ofertę.</p>
+            <p class="mb-6 font-semibold text-primary-600 dark:text-primary-400">Sprawdź nas i naszą ofertę.</p>
             <div class="flex items-center">
                 <button type="button" onclick="location.href='#kontakt';"
                     class="inline-flex items-center px-4 py-3 mr-5 text-sm font-semibold rounded-md shadow-sm text-primary-50 bg-c4 hover:bg-c3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-c2">
@@ -86,7 +86,7 @@
 
     <div
         class="inset-y-0 right-0 hidden w-full max-w-xl px-4 mx-auto lg:block -z-10 bg-c-4 md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
-        <svg class="absolute left-0 hidden h-full transform -translate-x-1/2 text-primary-50 dark:text-primary-900 lg:block"
+        <svg class="absolute left-0 hidden h-full transform -translate-x-1/2 text-primary-50 dark:text-primary-800 lg:block"
             viewBox="0 0 100 100" fill="currentColor" preserveAspectRatio="none slice">
             <path d="M50 0H100L50 100H0L50 0Z"></path>
         </svg>
