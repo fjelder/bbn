@@ -16,27 +16,22 @@
 <body x-data="{ atTop: false, show2: false }" x-init="atTop = (window.scrollY <= 0) ? false : true"
     class="bg-white dark:bg-primary-700 scroll-smooth">
 
+    @@include('./inc/navbar.html')
+    @@include('./inc/hero.html')
 
     <!-- @@include('./inc/_mobile_menu.html') -->
     <!-- @@include('./inc/_home.html') -->
-    @@include('./inc/home2.html')
+    <!-- @@include('./inc/home2.html') -->
 
 
-    @@include('./inc/_contact.html')
-    @@include('./inc/_contact_banner_small.html')
+    <!-- @@include('./inc/_contact.html') -->
+    <!-- @@include('./inc/_contact_banner_small.html') -->
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+    @@include('./inc/_section1.html')
+    @@include('./inc/back_to_top.html')
     <script src="js/bundle.min.js"></script>
-    <script defer>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+    <script>
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
 
         var swiper = new Swiper(".mySwiper", {
             autoplay: {
