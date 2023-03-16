@@ -374,6 +374,30 @@ textarea {
   font: inherit; /* 2 */
 }
 
+nav#navbarCollapse ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+nav#navbarCollapse ul li.group:hover a:hover {
+  color: #81a560;
+}
+nav#navbarCollapse ul li a {
+  display: flex;
+  padding: 8px 0;
+  margin: 0 16px;
+  font-size: 1rem;
+  color: #090e34;
+  white-space: normal;
+  text-align: center;
+}
+@media (min-width: 960px) {
+  nav#navbarCollapse ul li a {
+    margin-right: 0;
+    margin-left: 33px;
+  }
+}
+
 .navbar-logo {
   display: flex;
   align-items: center;

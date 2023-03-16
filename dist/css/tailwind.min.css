@@ -1937,11 +1937,6 @@ p.logo {
     margin-right: 0px;
   }
 
-  .lg\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .lg\:mb-0 {
     margin-bottom: 0px;
   }
@@ -2146,14 +2141,14 @@ p.logo {
     top: 100%;
   }
 
-  .group:hover .lg\:group-hover\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
   .group:hover .lg\:group-hover\:text-primary {
     --tw-text-opacity: 1;
     color: rgb(129 165 96 / var(--tw-text-opacity));
+  }
+
+  .group:hover .lg\:group-hover\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .group:hover .lg\:group-hover\:opacity-70 {
@@ -2162,24 +2157,12 @@ p.logo {
 }
 @media (min-width: 1140px) {
 
-  .xl\:static {
-    position: static;
-  }
-
   .xl\:ml-12 {
     margin-left: 3rem;
   }
 
   .xl\:mr-12 {
     margin-right: 3rem;
-  }
-
-  .xl\:block {
-    display: block;
-  }
-
-  .xl\:flex {
-    display: flex;
   }
 
   .xl\:w-6\/12 {
