@@ -31,11 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // === logo change
-    if (ud_header.classList.contains("sticky")) {
-      logo.src = "images/logo/logo.svg";
-    } else {
-      logo.src = "images/logo/logo-white.svg";
-    }
+    // if (ud_header.classList.contains("sticky")) {
+    //   logo.src = "images/logo/logo.svg";
+    // } else {
+    //   logo.src = "images/logo/logo-white.svg";
+    // }
 
     // show or hide the back-top-top button
     const backToTop = document.querySelector(".back-to-top");
@@ -48,4 +48,22 @@ document.addEventListener("DOMContentLoaded", function () {
       backToTop.style.display = "none";
     }
   };
+  // ===== responsive navbar
+  let navbarToggler = document.querySelector("#navbarToggler");
+  const navbarCollapse = document.querySelector("#navbarCollapse");
+
+  navbarToggler.addEventListener("click", () => {
+    navbarToggler.classList.toggle("navbarTogglerActive");
+    navbarCollapse.classList.toggle("hidden");
+  });
+
+  //===== close navbar-collapse when a  clicked
+  document
+    .querySelectorAll("#navbarCollapse ul li:not(.submenu-item) a")
+    .forEach((e) =>
+      e.addEventListener("click", () => {
+        navbarToggler.classList.remove("navbarTogglerActive");
+        navbarCollapse.classList.add("hidden");
+      })
+    );
 })();
