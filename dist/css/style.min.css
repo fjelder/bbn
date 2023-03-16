@@ -374,15 +374,19 @@ textarea {
   font: inherit; /* 2 */
 }
 
-.logos {
-  font-family: "Inter var", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #5f5d4f;
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  width: 100%;
 }
 
-.dark .logos {
-  color: #dbe9f9;
+.navbar-logo .logos {
+  font-family: "Inter var", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 28px;
+  margin-left: 14px;
 }
 
 .card {

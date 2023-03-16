@@ -6,15 +6,18 @@
 @import "partials/normalize";
 
 // @import "swiper/swiper.scss";
-
-.logos {
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  width: 100%;
+}
+.navbar-logo .logos {
   font-family: "Inter var", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
-  color: $c5-color;
-}
-.dark .logos {
-  color: $c6-color;
+  font-weight: 700;
+  font-size: 28px;
+  margin-left: 14px;
 }
 
 .card {
