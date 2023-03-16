@@ -1219,10 +1219,6 @@ input[type="radio"]:checked ~ .box .circle {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(33 43 54 / var(--tw-bg-opacity));
-}
 .bg-body-color {
   --tw-bg-opacity: 1;
   background-color: rgb(99 115 129 / var(--tw-bg-opacity));
@@ -1254,6 +1250,10 @@ input[type="radio"]:checked ~ .box .circle {
 .bg-current {
   background-color: currentColor;
 }
+.bg-dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 14 52 / var(--tw-bg-opacity));
+}
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(129 165 96 / var(--tw-bg-opacity));
@@ -1268,10 +1268,6 @@ input[type="radio"]:checked ~ .box .circle {
 .bg-zinc-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(113 113 122 / var(--tw-bg-opacity));
-}
-.bg-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(9 14 52 / var(--tw-bg-opacity));
 }
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
@@ -1411,6 +1407,9 @@ input[type="radio"]:checked ~ .box .circle {
 }
 .pt-\[120px\] {
   padding-top: 120px;
+}
+.pt-4 {
+  padding-top: 1rem;
 }
 .text-center {
   text-align: center;
@@ -2106,11 +2105,6 @@ p.logo {
 
   .lg\:text-\[40px\] {
     font-size: 40px;
-  }
-
-  .lg\:text-white {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 
   .lg\:text-dark {
