@@ -20,7 +20,7 @@ nav#navbarCollapse ul li.group a {
 }
 
 .sticky .navbar-logo {
-  @apply py-2;
+  @apply py-1 lg:py-2;
 }
 
 .sticky #navbarToggler span {

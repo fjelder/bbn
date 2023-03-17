@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/tailwind.min.css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> -->
 </head>
 
 <body x-data="{ atTop: false, show2: false }" x-init="atTop = (window.scrollY <= 0) ? false : true" class="">
@@ -18,15 +17,13 @@
     @@include('./inc/navbar.html')
     @@include('./inc/hero.html')
 
-    <!-- @@include('./inc/_mobile_menu.html') -->
-    <!-- @@include('./inc/_home.html') -->
-    <!-- @@include('./inc/home2.html') -->
+    @@include('./inc/indywidualni.html')
+    @@include('./inc/features.html')
 
 
-    @@include('./inc/_contact.html')
-    <!-- @@include('./inc/_contact_banner_small.html') -->
-
+    @@include('./inc/contact.html')
     @@include('./inc/back_to_top.html')
+
     <script src="js/bundle.min.js"></script>
 </body>
 
