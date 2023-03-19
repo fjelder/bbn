@@ -46,3 +46,19 @@ nav#navbarCollapse ul li.group a {
 .navbarTogglerActive > span:nth-child(3) {
   @apply top-[-8px] rotate-[135deg];
 }
+
+ul.check-list {
+  margin-bottom: 32px;
+}
+ul.check-list li {
+  @apply flex items-center mb-4 text-base text-body-color;
+}
+ul.check-list li span::before {
+  content: " ";
+  background-image: url("/svg/check_list.svg");
+  background-repeat: no-repeat;
+  height: 24px;
+  width: 24px;
+  margin-right: 12px;
+  display: block;
+}

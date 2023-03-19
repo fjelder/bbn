@@ -10,10 +10,43 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/tailwind.min.css">
+
+    <style>
+        .icon::before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .login::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f007";
+        }
+
+        .tps::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400;
+            content: "\f1ea";
+        }
+
+        .twitter::before {
+            font-family: "Font Awesome 5 Brands";
+            content: "\f099";
+        }
+
+    </style>
 </head>
 
 <body x-data="{ atTop: false, show2: false }" x-init="atTop = (window.scrollY <= 0) ? false : true" class="">
 
+    <ul style="margin: 0;">
+        <li><span class="icon login"></span> Login</li>
+        <li><span class="icon tps"></span> TPS Reports</li>
+        <li><span class="icon twitter"></span> Twitter</li>
+    </ul>
     <!-- ====== Navbar Section Start -->
 <div class="absolute top-0 left-0 z-40 w-full bg-transparent ud-header">
   <div class="container">
@@ -276,6 +309,67 @@
   </div>
 </section>
 <!-- ====== About Section End -->
+
+    <!-- ====== Indyvidual Section Start -->
+<section id="klienci-indywidualni" class="bg-white pt-20 pb-20 lg:pt-[120px] lg:pb-[120px]">
+  <div class="container">
+    <div class="bg-[#f3f4fe] wow fadeInUp" data-wow-delay=".2s">
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4">
+          <div class="flex-row-reverse items-center justify-between overflow-hidden border lg:flex">
+            <div
+              class="w-full py-12 px-7 sm:px-12 md:p-16 lg:max-w-[565px] lg:py-9 lg:px-16 xl:max-w-[640px] xl:p-[70px]">
+              <span class="inline-block px-5 py-2 mb-5 text-sm font-medium text-white bg-primary">
+                Bezpośredników!
+              </span>
+              <h2 class="mb-6 text-3xl font-bold text-dark sm:text-4xl sm:leading-snug 2xl:text-[40px]">
+                Klienci <span class="text-secondary">indywidualni.</span>
+              </h2>
+              <p class="mb-2 text-base leading-relaxed text-justify text-body-color">
+                Masz dosyć ciągłego wnoszenia piasku i błota do domu?
+              </p>
+              <p class="mb-4 text-base leading-relaxed text-justify text-body-color">
+                Z nami wylądujesz na <strong>bruku!</strong>
+              </p>
+
+
+              <p class="mb-4 text-base leading-relaxed text-justify text-body-color">
+                Wykonujemy:
+              </p>
+
+
+              <ul class="check-list">
+                <li><span></span>dojazdy,</li>
+                <li><span></span>podjazdy i wjazdy,</li>
+                <li><span></span>wejścia, obejścia, przejścia,</li>
+                <li><span></span>palisady, tarasy, schody,</li>
+                <li><span></span>odwodnienia z dachów, przyłącza kanalizacyjne, kratki odwodnieniowe </li>
+                <li><span></span>montaż ogrodzeń i płotów panelowych.</li>
+              </ul>
+
+
+              <p class="mb-1 text-base leading-relaxed text-justify text-body-color">
+                Wykończyłeś dom i brakuje środków?
+              </p>
+              <p class="mb-4 text-base leading-relaxed text-justify text-body-color">
+                Utwardzimy dojazd lub wykonamy
+                podbudowę pod przyszłą inwestycję.
+              </p>
+
+            </div>
+            <div class="text-center">
+              <div class="relative z-10 inline-block max-w-[450px]">
+                <img src="images/10x.jpg" alt="image"
+                  class="w-full mx-auto rounded-tr-[55px] rounded-br-[15px] lg:ml-auto" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ====== Indyvidual Section End -->
 
     <!-- ====== Features Section Start -->
 <section class="pt-20 pb-8 lg:pt-[120px] lg:pb-[70px]">
@@ -652,6 +746,9 @@
 
 
     <script src="js/bundle.min.js"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>

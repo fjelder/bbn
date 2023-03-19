@@ -10,13 +10,47 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/tailwind.min.css">
+
+    <style>
+        .icon::before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .login::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: "\f007";
+        }
+
+        .tps::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 400;
+            content: "\f1ea";
+        }
+
+        .twitter::before {
+            font-family: "Font Awesome 5 Brands";
+            content: "\f099";
+        }
+
+    </style>
 </head>
 
 <body x-data="{ atTop: false, show2: false }" x-init="atTop = (window.scrollY <= 0) ? false : true" class="">
 
+    <ul style="margin: 0;">
+        <li><span class="icon login"></span> Login</li>
+        <li><span class="icon tps"></span> TPS Reports</li>
+        <li><span class="icon twitter"></span> Twitter</li>
+    </ul>
     @@include('./inc/navbar.html')
     @@include('./inc/hero.html')
 
+    @@include('./inc/poznajmy_sie.html')
     @@include('./inc/indywidualni.html')
     @@include('./inc/features.html')
 
@@ -25,6 +59,9 @@
     @@include('./inc/back_to_top.html')
 
     <script src="js/bundle.min.js"></script>
+    <script>
+
+    </script>
 </body>
 
 </html>
